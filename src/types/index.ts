@@ -1,8 +1,10 @@
 export type Dish = {
+  id: string;
   name: string;
   price: string;
   category: string;
-  image: string;
   description: string;
   available: boolean;
 };
+
+export type Dishes = Dish[];

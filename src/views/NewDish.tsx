@@ -7,10 +7,10 @@ import { collection, addDoc } from "firebase/firestore";
 import type { Dish } from "../types";
 
 const initialValues: Dish = {
+  id: "",
   name: "",
   price: "",
   category: "",
-  image: "",
   description: "",
   available: false,
 };
@@ -135,7 +135,7 @@ export default function NewDish() {
                 <option value="lunch">Lunch</option>
                 <option value="dinner">Dinner</option>
                 <option value="beverage">Beverages</option>
-                <option value="dessert">Deserts</option>
+                <option value="dessert">Desserts</option>
                 <option value="salad">Salads</option>
               </select>
             </div>
@@ -148,23 +148,6 @@ export default function NewDish() {
                 <p>{formik.errors.category}</p>
               </div>
             )}
-
-            <div className="mb-4">
-              <label
-                htmlFor="image"
-                className="block text-gray-700 text-sm font-bold mb-2"
-              >
-                Image
-              </label>
-              <input
-                id="image"
-                type="file"
-                value={formik.values.image}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
-              />
-            </div>
 
             <div className="mb-4">
               <label
