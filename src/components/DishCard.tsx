@@ -27,11 +27,9 @@ export default function DishCard({ dish }: DishCardProps) {
         await updateDoc(docRef, {
           available: existence,
         });
-
-        console.log("Disponibilidad actualizada:", existence);
       }
     } catch (error) {
-      console.error("Error al actualizar disponibilidad:", error);
+      console.error(error);
     }
   };
 
